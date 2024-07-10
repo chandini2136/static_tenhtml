@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        div
+        {
+            box-shadow: 0 0 10px black;
+            width: 300px;
+            height:200px;
+            margin:100px auto;
+            position: relative;
+ /*         overflow:hidden;*/
+        }
+        div:hover
+        {
+            cursor: pointer;
+        }
+        div>img
+        {
+            width: inherit;
+            height: inherit;
+        }
+        div>#child_one
+        {
+            background-color: black;
+            position: absolute;
+            top:0px;
+            left:0px;
+            margin:0px;
+            transition: all 1s linear 3s;
+        }
+        div:hover>#child_one
+        {
+            transform: translateY(100%);
+        }
+        div>#child_two
+        {
+            background-color:cyan;
+            position: absolute;
+            top:0px;
+            left:0px;
+            margin:0px;
+            transition: all 1s linear 2s;
+        }
+        div:hover>#child_two
+        {
+            transform: translateX(100%);
+        }
+        div>#child_three
+        { 
+            background-color: pink;
+            position: absolute;
+            top:0px;
+            left:0px;
+            margin:0px;
+            transition: all 1s linear 1s;
+        }
+        div:hover>#child_three
+        {
+            transform: translateY(-100%);
+        }
+        div>#child_four
+        { 
+            background-color:red;
+            position: absolute;
+            top:0px;
+            left:0px;
+            margin:0px;
+            transition: all 1s linear 0s;
+        }
+        div:hover>#child_four
+        {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="{% static 'images/SURYAD.jfif' %}" width="350px" height="250px"/>"
+        <div id="child_one"></div>
+        <div id="child_two"></div>
+        <div id="child_three"></div>
+        <div id="child_four"></div>
+    </div>
+</body>
+</html>

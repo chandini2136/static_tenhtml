@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css positions</title>
+    <style>
+        *
+        {
+            margin: 0px;
+        }
+        div
+        {
+            box-shadow: 0 0 10px black;
+            width: 350px;
+            height: 200px;
+/*            margin: 100px auto;*/
+margin-top: 200px;
+display: inline-block;
+            border-radius: 10px;
+            position:relative;
+            overflow:hidden;
+        }
+        div:hover
+        {
+            cursor: pointer;
+            filter:grayscale(0%);
+        }
+        div>img
+        {
+          width: inherit;
+          height: inherit;
+          border-radius:inherit;
+          filter:grayscale(100%);
+          transition: all 1s linear 0s;
+        } 
+        div:hover>img
+        {
+            filter: grayscale(0%);
+        }
+        div>#content
+        {
+            background-color:rgba(0, 0, 0, 0.4);
+            color:white;
+ /*           padding: 5px;*/
+            text-align: center; 
+            position: absolute;
+            margin: 0px;
+            top: 0px;
+            left:0px;
+
+            transform: translateY(100%);
+            transition: all 1s linear 1s;
+        }
+        div:hover>#content
+       {
+          transform:translaterY(0%) ;
+       }
+    </style>
+</head>
+<body>
+    <div id="parent">   
+
+        <img src="{% static 'images/SURYAD.jfif' %}" width="350px" height="250px"/>"
+
+        <div id="content">
+            <h2>Balayya:-</h2>
+            <p>Nandamuri Balakrishna (born 10 June 1960), simply known as Balakrishna or Balayya or NBK, is an Indian actor, producer and politician.[2][3] He appeared in more than 100 Telugu films over forty years in a variety of roles and established himself as one of the leading actors of Telugu cinema.[4] He won three Nandi Awards and one South Indian International Movie Award. He is an elected member of the Andhra Pradesh Legislative Assembly from Hindupuram constituency since 2014.</p>
+            <button>learn more</button>
+        </div>
+    </div>
+</body>
+</html>
